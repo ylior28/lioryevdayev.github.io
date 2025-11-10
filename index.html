@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lior Yevdayev | Electronics & Embedded Engineer</title>
+  <title>Lior Yevdayev | Portfolio</title>
   <style>
+    /* --- Body --- */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -12,11 +13,31 @@
       color: #f8fafc;
       scroll-behavior: smooth;
     }
-    header {
-      padding: 60px 20px;
-      text-align: center;
+
+    /* --- Navbar --- */
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
       background: #1e293b;
+      padding: 15px 20px;
+      z-index: 1000;
     }
+    nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* --- Sections --- */
+    header, section {
+      padding: 100px 20px 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
     header h1 {
       font-size: 2.5rem;
       color: #38bdf8;
@@ -25,107 +46,136 @@
     header p {
       font-size: 1.2rem;
       color: #cbd5e1;
-      max-width: 600px;
-      margin: 0 auto;
     }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    h2 {
-      color: #38bdf8;
-      margin-bottom: 40px;
-    }
-    .projects, .skills {
+
+    /* --- Skills --- */
+    .skills {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
     }
-    .card {
+    .skills .card {
       background: #1e293b;
       border-radius: 10px;
-      padding: 20px;
-      width: 250px;
+      padding: 15px 20px;
+      width: 200px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    .card h3 {
-      margin-top: 0;
-      color: #f8fafc;
+
+    /* --- Projects --- */
+    .projects {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-    .card p {
+    .projects .card {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .projects .card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .projects .card h3 {
+      color: #f8fafc;
+      margin-top: 10px;
+    }
+    .projects .card p {
       color: #cbd5e1;
       font-size: 0.95rem;
     }
-    .card a {
+    .projects .card a {
       display: inline-block;
       margin-top: 10px;
       color: #38bdf8;
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* --- Contact --- */
+    #contact p, #contact a {
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+    #contact a {
+      color: #38bdf8;
+    }
+
+    /* --- Footer --- */
     footer {
+      text-align: center;
       padding: 20px;
       background: #1e293b;
       color: #94a3b8;
-    }
-    footer a {
-      color: #38bdf8;
-      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT INFO</a>
+  </nav>
+
+  <!-- Header / Home -->
+  <header id="home">
     <h1>Lior Yevdayev</h1>
     <p>Electronics & Embedded Systems Engineer passionate about FPGA, VHDL, and hardware design.</p>
   </header>
 
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card">C / Python / VHDL / Assembly</div>
+      <div class="card">Arduino / Raspberry Pi / FPGA</div>
+      <div class="card">Embedded Systems / Signal Processing</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
       <div class="card">
+        <img src="images/project1.png" alt="Smart Surveillance">
         <h3>Smart Surveillance System</h3>
         <p>Raspberry Pi-based human detection system using TFLite and servo control.</p>
-        <a href="#">View on GitHub</a>
+        <a href="https://github.com/ylior28/smart-surveillance">View on GitHub</a>
       </div>
       <div class="card">
+        <img src="images/project2.png" alt="Autonomous 4WD Car">
         <h3>Autonomous 4WD Car</h3>
         <p>Bluetooth-controlled car with obstacle avoidance and autonomous mode.</p>
-        <a href="#">View on GitHub</a>
+        <a href="https://github.com/ylior28/4wd-car">View on GitHub</a>
+      </div>
+      <div class="card">
+        <img src="images/project3.png" alt="Human Detection App">
+        <h3>Human Detection App</h3>
+        <p>Python & TFLite application for detecting humans with real-time alerts.</p>
+        <a href="https://github.com/ylior28/human-detection-app">View on GitHub</a>
       </div>
     </div>
   </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="card">
-      <img src="images/project1.png" alt="Smart Surveillance" style="width:100%; border-radius:5px;">
-      <h3>Smart Surveillance System</h3>
-      <p>Raspberry Pi-based human detection system using TFLite and servo control.</p>
-      <a href="https://github.com/ylior28/smart-surveillance">View on GitHub</a>
-    </div>
-
-    <div class="card">
-      <img src="images/project2.png" alt="Autonomous 4WD Car" style="width:100%; border-radius:5px;">
-      <h3>Autonomous 4WD Car</h3>
-      <p>Bluetooth-controlled car with obstacle avoidance and autonomous mode.</p>
-      <a href="https://github.com/ylior28/4wd-car">View on GitHub</a>
-    </div>
-
-    <div class="card">
-      <img src="images/project3.png" alt="Human Detection App" style="width:100%; border-radius:5px;">
-      <h3>Human Detection App</h3>
-      <p>Python & TFLite application for detecting humans with real-time alerts.</p>
-      <a href="https://github.com/ylior28/human-detection-app">View on GitHub</a>
-    </div>
-  </div>
-</section>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Information</h2>
+    <p>Email: your@email.com</p>
+    <p>GitHub: <a href="https://github.com/ylior28">GitHub Profile</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">LinkedIn</a></p>
+  </section>
 
   <footer>
-    © 2025 Lior Yevdayev | <a href="https://github.com/ylior28">GitHub</a>
+    © 2025 Lior Yevdayev
   </footer>
 
 </body>
