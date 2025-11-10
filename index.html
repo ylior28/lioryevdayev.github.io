@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lior Yevdayev | Electronics & Embedded Engineer</title>
   <style>
     body {
@@ -10,23 +10,31 @@
       font-family: Arial, sans-serif;
       background: #0f172a;
       color: #f8fafc;
-      text-align: center;
+      scroll-behavior: smooth;
     }
     header {
       padding: 60px 20px;
+      text-align: center;
+      background: #1e293b;
     }
-    h1 {
+    header h1 {
       font-size: 2.5rem;
       color: #38bdf8;
+      margin-bottom: 10px;
     }
-    p {
-      font-size: 1.1rem;
+    header p {
+      font-size: 1.2rem;
       color: #cbd5e1;
       max-width: 600px;
-      margin: 10px auto 40px;
+      margin: 0 auto;
     }
     section {
-      margin: 40px 0;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 40px;
     }
     .projects, .skills {
       display: flex;
@@ -41,25 +49,40 @@
       width: 250px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    a {
+    .card h3 {
+      margin-top: 0;
+      color: #f8fafc;
+    }
+    .card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
       color: #38bdf8;
       text-decoration: none;
+      font-weight: bold;
     }
     footer {
-      margin-top: 60px;
       padding: 20px;
       background: #1e293b;
       color: #94a3b8;
     }
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Lior Yevdayev</h1>
     <p>Electronics & Embedded Systems Engineer passionate about FPGA, VHDL, and hardware design.</p>
   </header>
 
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
       <div class="card">
@@ -75,7 +98,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
       <div class="card">C / Python / VHDL / Assembly</div>
@@ -85,7 +108,8 @@
   </section>
 
   <footer>
-    © 2025 Lior Yevdayev | <a href="https://github.com/lioryevdayev">GitHub</a>
+    © 2025 Lior Yevdayev | <a href="https://github.com/ylior28">GitHub</a>
   </footer>
+
 </body>
 </html>
