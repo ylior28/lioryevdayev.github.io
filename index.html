@@ -369,33 +369,47 @@
 
 
 
-<section id="visitors">
+<section id="password-section">
+  <label for="pwd">Enter password to see visit counter:</label>
+  <input type="password" id="pwd" placeholder="Password">
+  <button onclick="checkPassword()">Submit</button>
+  <p id="pwd-msg" style="color:red; display:none;">Wrong password!</p>
+</section>
+
+<section id="visitors" style="display:none;">
   Views: <span id="visits">0</span>
 </section>
 
-<button onclick="setMe()">This is me</button>
-
 <script>
-  // Function to identify yourself
-  function setMe() {
-    localStorage.setItem("isMe", "true");
-    alert("Your visit counter is now active!");
-    location.reload(); // refresh to show the counter
+  const password = "lior123"; // Your secret password
+  const visitsElement = document.getElementById('visits');
+  const passwordSection = document.getElementById('password-section');
+  const pwdMsg = document.getElementById('pwd-msg');
+
+  // Check if already verified
+  if (localStorage.getItem("isMe") === "true") {
+    showCounter();
   }
 
-  // Check if it's you
-  const isMe = localStorage.getItem("isMe") === "true";
-  const visitsElement = document.getElementById('visits');
+  function checkPassword() {
+    const input = document.getElementById('pwd').value;
+    if (input === password) {
+      localStorage.setItem("isMe", "true");
+      showCounter();
+    } else {
+      pwdMsg.style.display = "block";
+    }
+  }
 
-  if (isMe) {
-    // Get previous visits count from localStorage or start at 0
+  function showCounter() {
+    passwordSection.style.display = "none"; // Hide password input
+    document.getElementById('visitors').style.display = 'block';
+
+    // Load previous visits or start at 0
     let visits = parseInt(localStorage.getItem("myVisits") || "0");
-    visits++; // increment by 1 for this visit
+    visits++;
     visitsElement.innerText = visits;
     localStorage.setItem("myVisits", visits);
-  } else {
-    // hide the counter for others
-    visitsElement.parentElement.style.display = 'none';
   }
 </script>
 
