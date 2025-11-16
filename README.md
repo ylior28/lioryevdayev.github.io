@@ -1,3 +1,3 @@
 # lioryevdayev.github.io
-my projects
+my website :)
 https://ylior28.github.io/lioryevdayev.github.io/
