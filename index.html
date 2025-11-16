@@ -369,34 +369,21 @@
 
 
 
-<section id="visitors">
-  Views: <span id="visits">0</span>
-</section>
-
-<button onclick="setMe()">This is me</button>
+<input type="password" id="pass" placeholder="Enter password">
+<button onclick="showVisits()">Show Visits</button>
 
 <script>
-  // Function to mark the user as "me"
-  function setMe() {
-    localStorage.setItem("isMe", "true");
-    alert("the identity has been saved - now you will see the visitor count!");
-    location.reload();
-  }
-
-  // Check if the user is "me"
-  const isMe = localStorage.getItem("isMe") === "true";
-  const visitsElement = document.getElementById('visits');
-
-  if (isMe) {
-    // Fetch the visitor count from CountAPI
+function showVisits() {
+  const pw = document.getElementById('pass').value;
+  if (pw === "123") {
     fetch('https://api.countapi.xyz/hit/lioryevdayev.github.io/visits')
       .then(res => res.json())
-      .then(data => visitsElement.innerText = data.value)
-      .catch(err => visitsElement.innerText = 'N/A');
+      .then(data => alert("Visits: " + data.value))
+      .catch(err => alert("Error fetching count"));
   } else {
-    // Hide the visitor counter for other users
-    visitsElement.parentElement.style.display = 'none';
+    alert("Wrong password!");
   }
+}
 </script>
 
 
