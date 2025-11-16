@@ -370,47 +370,7 @@
 
 
 <!-- Hidden visit counter -->
-<section id="visitors" style="display:none;">
-  Views: <span id="visits">0</span>
-</section>
-
-<!-- Password box -->
-<div id="passwordDiv">
-  <input type="password" id="passwordInput" placeholder="Enter password" />
-  <button onclick="checkPassword()">Show Counter</button>
-</div>
-
-<script>
-  const PASSWORD = "123"; // change this
-
-  // Always increment the counter for EVERY visitor
-  fetch('https://api.countapi.xyz/hit/lioryevdayev/visits');
-
-  // Function to show the counter only if password is correct
-  function checkPassword() {
-    const userInput = document.getElementById("passwordInput").value;
-
-    if (userInput === PASSWORD) {
-      // Hide password box
-      document.getElementById("passwordDiv").style.display = "none";
-
-      // Show the views section
-      document.getElementById("visitors").style.display = "block";
-
-      // Get the real visit count
-      fetch('https://api.countapi.xyz/get/lioryevdayev/visits')
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById("visits").textContent = data.value;
-        })
-        .catch(() => {
-          document.getElementById("visits").textContent = "Error";
-        });
-    } else {
-      alert("Wrong password!");
-    }
-  }
-</script>
+<p>Number of visits: <span id="visits"></span></p> <script> fetch('https://api.countapi.xyz/hit/lioryevdayev.github.io/visits') .then(response => response.json()) .then(data => { document.getElementById('visits').innerText = data.value; }); </script>
 
 
 
