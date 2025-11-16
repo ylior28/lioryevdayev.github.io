@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lior Yevdayev | Portfolio</title>
+  
   <style>
     /* --- Body --- */
     body {
@@ -214,7 +215,7 @@
         <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/my%20final%20project%20Human%20Detection%20%26%20Tracking%20System/Picture1.png" alt="Smart Surveillance" style="width:240px;height:180px;">
         <h3>Human Detection & Tracking System</h3>
         <p>📷💻🧠Developed an intelligent Human Detection & Tracking System as part of my final B.Sc. project in Electrical & Electronics Engineering.</p>
-		<p>An intelligent human detection and tracking system designed for real-time surveillance.<p>
+		<p>An intelligent human detection and tracking system designed for real-time surveillance.</p>
 		<p>The system identifies people using a lightweight ML model, tracks their movement with a servo-controlled camera, and triggers safety alerts based on distance and behavior.</p>
 		<p>It combines machine learning, computer vision, and embedded hardware control into a unified smart-monitoring platform.</p>
 		<p>🛠 Tools & Technologies: Python | OpenCV | TensorFlow Lite | Raspberry Pi 4B | Picamera2 | Tkinter GUI |threading | KiCad | </p>
@@ -365,6 +366,41 @@
     <p>GitHub: <a href="https://github.com/ylior28/my-projects">GitHub Profile</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/lior-yevdayev/">LinkedIn</a></p>
   </section>
+
+
+
+<section id="visitors">
+  Views: <span id="visits">0</span>
+</section>
+
+<button onclick="setMe()">This is me</button>
+
+<script>
+  // Function to mark the user as "me"
+  function setMe() {
+    localStorage.setItem("isMe", "true");
+    alert("the identity has been saved - now you will see the visitor count!");
+    location.reload();
+  }
+
+  // Check if the user is "me"
+  const isMe = localStorage.getItem("isMe") === "true";
+  const visitsElement = document.getElementById('visits');
+
+  if (isMe) {
+    // Fetch the visitor count from CountAPI
+    fetch('https://api.countapi.xyz/hit/lioryevdayev.github.io/visits')
+      .then(res => res.json())
+      .then(data => visitsElement.innerText = data.value)
+      .catch(err => visitsElement.innerText = 'N/A');
+  } else {
+    // Hide the visitor counter for other users
+    visitsElement.parentElement.style.display = 'none';
+  }
+</script>
+
+
+
 
   <footer>
     © 2025 Lior Yevdayev
