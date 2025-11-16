@@ -369,21 +369,34 @@
 
 
 
-<input type="password" id="pass" placeholder="Enter password">
-<button onclick="showVisits()">Show Visits</button>
+<section id="visitors">
+  Views: <span id="visits">0</span>
+</section>
+
+<button onclick="setMe()">This is me</button>
 
 <script>
-function showVisits() {
-  const pw = document.getElementById('pass').value;
-  if (pw === "123") {
-    fetch('https://api.countapi.xyz/hit/lioryevdayev.github.io/visits')
-      .then(res => res.json())
-      .then(data => alert("Visits: " + data.value))
-      .catch(err => alert("Error fetching count"));
-  } else {
-    alert("Wrong password!");
+  // Function to identify yourself
+  function setMe() {
+    localStorage.setItem("isMe", "true");
+    alert("Your visit counter is now active!");
+    location.reload(); // refresh to show the counter
   }
-}
+
+  // Check if it's you
+  const isMe = localStorage.getItem("isMe") === "true";
+  const visitsElement = document.getElementById('visits');
+
+  if (isMe) {
+    // Get previous visits count from localStorage or start at 0
+    let visits = parseInt(localStorage.getItem("myVisits") || "0");
+    visits++; // increment by 1 for this visit
+    visitsElement.innerText = visits;
+    localStorage.setItem("myVisits", visits);
+  } else {
+    // hide the counter for others
+    visitsElement.parentElement.style.display = 'none';
+  }
 </script>
 
 
