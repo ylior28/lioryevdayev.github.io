@@ -371,8 +371,18 @@
 
 
 
+<p>Views: <span id="views">loading...</span></p>
 
-	<section id="visitors"> views: <span id="visits">0</span> </section> <script> const url = 'https://api.countapi.xyz/hit/lioryevdayev.github.io/visits'; fetch(url) .then(res => res.json()) .then(data => { document.getElementById('visits').innerText = data.value; }) .catch(err => { console.error('CountAPI error:', err); document.getElementById('visits').innerText = 'N/A'; }); </script>
+<script>
+fetch("https://api.countapi.dev/update/lior-site/views/?amount=1")
+  .then(res => res.json())
+  .then(data => {
+      document.getElementById("views").innerHTML = data.value;
+  })
+  .catch(err => {
+      document.getElementById("views").innerHTML = "Error";
+  });
+</script>
 
 
 
