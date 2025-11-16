@@ -371,38 +371,22 @@
 
 
 
-	<p>Views: <span id="views">Loading...</span></p>
-
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<div style="text-align: center; padding: 20px;">
+  <p>👁️ Views: <span id="visit-count">Loading...</span></p>
+</div>
 
 <script>
-  // 👇 הדבק כאן את ה-CONFIG שלך מ-Firebase
-  var firebaseConfig = {
-    apiKey: "XXXX",
-    authDomain: "XXXX.firebaseapp.com",
-    databaseURL: "https://XXXX-default-rtdb.firebaseio.com",
-    projectId: "XXXX",
-    storageBucket: "XXXX.appspot.com",
-    messagingSenderId: "XXXX",
-    appId: "XXXX"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
-
-  const countRef = db.ref("views");
-
-  countRef.transaction((value) => {
-    return (value || 0) + 1;
-  });
-
-  countRef.on("value", (snap) => {
-    document.getElementById("views").innerText = snap.val();
-  });
+  // Replace 'your-namespace' and 'your-page' with your own identifiers
+  fetch('https://api.countapi.xyz/hit/ylior28-lioryevdayev/homepage')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visit-count').textContent = data.value;
+    })
+    .catch(error => {
+      console.error('Error fetching view count:', error);
+      document.getElementById('visit-count').textContent = 'Error';
+    });
 </script>
-
 
 
 	
