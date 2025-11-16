@@ -369,48 +369,40 @@
 
 
 
-<section id="password-section">
-  <label for="password">Enter password to view visits:</label>
-  <input type="password" id="password" placeholder="Password">
-  <button id="show-counter">Show Counter</button>
-</section>
-
 <section id="visitors" style="display:none;">
   Views: <span id="visits">0</span>
 </section>
 
+<div id="passwordDiv">
+  <input type="password" id="passwordInput" placeholder="Enter password" />
+  <button onclick="checkPassword()">Show Counter</button>
+</div>
+
 <script>
-  const PASSWORD = "lior123"; 
+  const CORRECT_PASSWORD = "yourpassword"; // set your password here
 
-  const button = document.getElementById('show-counter');
-  const passwordInput = document.getElementById('password');
-  const visitorsSection = document.getElementById('visitors');
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+    if (input === CORRECT_PASSWORD) {
+      document.getElementById("passwordDiv").style.display = "none";
+      document.getElementById("visitors").style.display = "block";
 
-  button.addEventListener('click', () => {
-    if (passwordInput.value === PASSWORD) {
-      // Hide the password input section
-      document.getElementById('password-section').style.display = 'none';
-      
-      // Show the visitors section
-      visitorsSection.style.display = 'block';
-
-      // Fetch the visit count from CountAPI
+      // Fetch CountAPI
       fetch('https://api.countapi.xyz/hit/lioryevdayev.github.io/visits')
         .then(res => res.json())
         .then(data => {
-          document.getElementById('visits').innerText = data.value;
+          document.getElementById("visits").innerText = data.value;
         })
         .catch(err => {
-          console.error('CountAPI error:', err);
-          document.getElementById('visits').innerText = 'Error';
+          console.error("CountAPI error:", err);
+          document.getElementById("visits").innerText = "N/A";
         });
-
     } else {
-      alert("Incorrect password!");
-      passwordInput.value = "";
+      alert("Wrong password!");
     }
-  });
+  }
 </script>
+
 
 
 
