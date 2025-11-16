@@ -369,10 +369,10 @@
 
 
 
-<!-- Hidden visit counter -->
-<p>Number of visits: <span id="visits"></span></p> <script> fetch('https://api.countapi.xyz/hit/lioryevdayev.github.io/visits') .then(response => response.json()) .then(data => { document.getElementById('visits').innerText = data.value; }); </script>
 
 
+
+	<section id="visitors"> views: <span id="visits">0</span> </section> <script> const url = 'https://api.countapi.xyz/hit/lioryevdayev.github.io/visits'; fetch(url) .then(res => res.json()) .then(data => { document.getElementById('visits').innerText = data.value; }) .catch(err => { console.error('CountAPI error:', err); document.getElementById('visits').innerText = 'N/A'; }); </script>
 
 
 
