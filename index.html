@@ -7,24 +7,25 @@
   <style>
     /* --- Body --- */
     body {
-      margin: 0;
+      margin: 0px;
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
+      background: rgb(15,23,42);
+      color: rgb(255, 255, 10);
       scroll-behavior: smooth;
     }
 
     /* --- Navbar --- */
     nav {
-      position: fixed;
-      top: 0;
-      right: 0;
-      background: #1e293b;
-      padding: 15px 20px;
-      z-index: 1000;
+      position: sticky;
+	  top: 0;
+	  right: 0;
+      background: linear-gradient(to right, rgb(5,10,30), rgb(55,63,82));
+      padding: 10px 10px;
+	  text-align: center;
+      z-index: 1;
     }
     nav a {
-      color: #38bdf8;
+      color: rgb(255,255,0);
       text-decoration: none;
       margin-left: 20px;
       font-weight: bold;
@@ -32,20 +33,20 @@
 
     /* --- Sections --- */
     header, section {
-      padding: 100px 20px 60px 20px;
+      padding: 5px 20px 60px 20px;
       max-width: 1000px;
       margin: auto;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      color: #38bdf8;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      color: rgb(0,200,255);
+      margin-bottom: 5px;
     }
     header p {
       font-size: 1.2rem;
-      color: #cbd5e1;
+      color: rgb(255,255,255);;
     }
 
     /* --- Skills --- */
@@ -53,14 +54,23 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 10px;
     }
-    .skills .card {
-      background: #1e293b;
-      border-radius: 10px;
-      padding: 15px 20px;
-      width: 200px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+	
+	.skills .card {
+		width: 150px;      /* each skill box width */
+	}
+	
+	.skills-text {
+	  font-size: 1rem;       /* make text large */
+	  color: rgb(255,255,255);        /* your desired color */
+	  font-weight: bold;
+	  margin-bottom: 2px;   /* space between text and image */
+	}
+	
+	.skills .card img {
+      width: 100%;
+      border-radius: 5px;
     }
 
     /* --- Projects --- */
@@ -71,7 +81,7 @@
       gap: 20px;
     }
     .projects .card {
-      background: #1e293b;
+      background: rgb(30, 41, 59);
       border-radius: 10px;
       padding: 15px;
       width: 250px;
@@ -83,36 +93,35 @@
       border-radius: 5px;
     }
     .projects .card h3 {
-      color: #f8fafc;
+      color: rgb(255, 255, 255);
       margin-top: 10px;
     }
     .projects .card p {
-      color: #cbd5e1;
+      color: rgb(203, 213, 225);
       font-size: 0.95rem;
     }
     .projects .card a {
       display: inline-block;
       margin-top: 10px;
-      color: #38bdf8;
-      text-decoration: none;
+      color: rgb(0,100,200);
       font-weight: bold;
     }
 
     /* --- Contact --- */
     #contact p, #contact a {
       font-size: 1rem;
-      color: #cbd5e1;
+      color: rgb(0,200,255);
     }
     #contact a {
-      color: #38bdf8;
+      color: rgb(0,100,200);;
     }
 
     /* --- Footer --- */
     footer {
       text-align: center;
       padding: 20px;
-      background: #1e293b;
-      color: #94a3b8;
+      background: rgb(30, 41, 59);
+      color: rgb(148, 163, 184);
     }
   </style>
 </head>
@@ -120,9 +129,9 @@
 
   <!-- Navbar -->
   <nav>
-    <a href="#home">HOME</a>
-    <a href="#projects">PROJECTS</a>
-    <a href="#contact">CONTACT INFO</a>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact Info</a>
   </nav>
 
   <!-- Header / Home -->
@@ -135,9 +144,63 @@
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
-      <div class="card">C / Python / VHDL / Assembly</div>
-      <div class="card">Arduino / Raspberry Pi / FPGA</div>
-      <div class="card">Embedded Systems / Signal Processing</div>
+		<div class="card">
+			<!-- C_language -->
+			<h1 class="skills-text">C</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/C_Logo.png" alt="C_logo" style="width:40px;height:40px;"> 
+			<!-- C++_language -->
+			<h1 class="skills-text">C++</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/C%2B%2B_Logo.png" alt="C++_logo" style="width:40px;height:40px;">
+			<!-- Modelsim-->
+			<h1 class="skills-text">Modelsim</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Modelsim_Logo.png" alt="Modelsim_logo" style="width:40px;height:40px;" >
+		</div>
+		<div class="card">
+			<!-- Assembly_language -->
+			<h1 class="skills-text">Assembly</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Assembly_Logo.png" alt="Assembly_logo" style="width:40px;height:40px;">
+			<!-- Simplicity_Studio_5 -->
+			<h1 class="skills-text">Simplicity Studio 5</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Simplicity_Studio_5_Logo.png" alt="Simplicity_Studio_5_logo" style="width:40px;height:40px;" >
+			<!-- Logisim -->
+			<h1 class="skills-text">Logisim</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Logisim_Logo.png" alt="Logisim_logo" style="width:40px;height:40px;" >
+		</div>
+		<div class="card">
+			<!-- Python_language -->
+			<h1 class="skills-text">Python</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Python-Logo.png" alt="Python_logo" style="width:40px;height:40px;">
+			<!-- Raspberrry_Pi -->
+			<h1 class="skills-text">Raspberry Pi</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Raspberry_Pi_Logo.png" alt="Raspberry_Pi_logo" style="width:40px;height:40px;">
+			<!-- Matlab-->
+			<h1 class="skills-text">Matlab</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Matlab_Logo.png" alt="Matlab_logo" style="width:40px;height:40px;">
+		</div>
+		<div class="card">
+			<!-- Arduino -->
+			<h1 class="skills-text">Arduino</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Arduino_Logo.png" alt="Arduino_logo" style="width:40px;height:40px;">
+			<!-- MS_office -->
+			<h1 class="skills-text">MS office</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/MS_office_Logo.png" alt="MS_office" style="width:40px;height:40px;">
+		</div>
+		<div class="card">
+			<!-- KiCad -->
+			<h1 class="skills-text">KiCad</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/KiCad_Logo.png" alt="KiCad" style="width:40px;height:40px;" >
+			<!-- Multisim -->
+			<h1 class="skills-text">Multisim</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Multisim_Logo.png" alt="Multisim_logo" style="width:40px;height:40px;" >
+		</div>
+		<div class="card">
+			<!-- VHDL_language -->
+			<h1 class="skills-text">VHDL</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/VHDL_Logo.png" alt="VHDL_logo" style="width:40px;height:40px;" >
+			<!-- Quartos -->
+			<h1 class="skills-text">Quartos</h1>
+			<img src="https://raw.githubusercontent.com/ylior28/lioryevdayev.github.io/refs/heads/main/logos_img/Quartos_Logo.png" alt="Quartos_logo" style="width:40px;height:40px;">
+		</div>
     </div>
   </section>
 
@@ -145,32 +208,161 @@
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
-      <div class="card">
-        <img src="images/project1.png" alt="Smart Surveillance">
-        <h3>Smart Surveillance System</h3>
-        <p>Raspberry Pi-based human detection system using TFLite and servo control.</p>
-        <a href="https://github.com/ylior28/smart-surveillance">View on GitHub</a>
+       
+	   <!-- human detect -->
+	  <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/my%20final%20project%20Human%20Detection%20%26%20Tracking%20System/Picture1.png" alt="Smart Surveillance" style="width:240px;height:180px;">
+        <h3>Human Detection & Tracking System</h3>
+        <p>📷💻🧠Developed an intelligent Human Detection & Tracking System as part of my final B.Sc. project in Electrical & Electronics Engineering.</p>
+		<p>An intelligent human detection and tracking system designed for real-time surveillance.<p>
+		<p>The system identifies people using a lightweight ML model, tracks their movement with a servo-controlled camera, and triggers safety alerts based on distance and behavior.</p>
+		<p>It combines machine learning, computer vision, and embedded hardware control into a unified smart-monitoring platform.</p>
+		<p>🛠 Tools & Technologies: Python | OpenCV | TensorFlow Lite | Raspberry Pi 4B | Picamera2 | Tkinter GUI |threading | KiCad | </p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/my%20final%20project%20Human%20Detection%20%26%20Tracking%20System">View on GitHub</a>
       </div>
+	  
+	   <!-- Autonomous IR-Guided Competitive Vehicle -->
       <div class="card">
-        <img src="images/project2.png" alt="Autonomous 4WD Car">
-        <h3>Autonomous 4WD Car</h3>
-        <p>Bluetooth-controlled car with obstacle avoidance and autonomous mode.</p>
-        <a href="https://github.com/ylior28/4wd-car">View on GitHub</a>
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Autonomous%20IR-Guided%20Competitive%20Vehicle/image/Competitive%20Vehicle.jpeg" alt="Autonomous 4WD Car"  style="width:240px;height:180px;">
+        <h3>Autonomous IR-Guided Competitive Vehicle</h3>
+        <p>🤖 Autonomous IR-Guided Competitive Vehicle I developed an autonomous vehicle designed for a competitive challenge, where the goal was to reach an IR transmitter placed across the arena in the shortest possible time while avoiding obstacles.</p>
+		<p>This project provided practical experience in embedded system integration, sensor fusion, and autonomous navigation algorithms, as well as hardware/software co-design and troubleshooting in real-world conditions.</p>
+		<p>🛠 Tools & Technologies: Arduino | C++ | </p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Autonomous%20IR-Guided%20Competitive%20Vehicle">View on GitHub</a>
       </div>
+	  
+	  <!-- Child Left-in-Car Prevention System -->
       <div class="card">
-        <img src="images/project3.png" alt="Human Detection App">
-        <h3>Human Detection App</h3>
-        <p>Python & TFLite application for detecting humans with real-time alerts.</p>
-        <a href="https://github.com/ylior28/human-detection-app">View on GitHub</a>
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Child%20Left-in-Car%20Prevention%20System/unnamed.jpg" alt="Human Detection App" style="width:240px;height:180px;">
+        <h3>Child Left-in-Car Prevention System</h3>
+        <p>🚗 Child Left-in-Car Prevention System I developed a smart system designed to detect and prevent children from being left unattended in vehicles.</p>
+		<p>The system uses weight, temperature, and distance sensors, and if a child is detected in dangerous conditions, it triggers an alarm.</p>
+		<p>This project provided hands-on experience in embedded hardware design, working with datasheets, real-time troubleshooting, and integrating multiple sensors for automated decision-making.</p>
+		<p>🛠 Tools & Technologies: Multisim</p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Child%20Left-in-Car%20Prevention%20System">View on GitHub</a>
       </div>
+	  
+	  	  <!-- DSB-SC Modulation & Demodulation -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/DSB-SC%20Modulation%20%26%20Demodulation/dsbimg.jpeg" alt="Human Detection App" style="width:240px;height:180px;">
+        <h3>DSB-SC Modulation & Demodulation</h3>
+        <p>📡 DSB-SC Modulation & Demodulation Project This project demonstrates Double Sideband Suppressed Carrier (DSB-SC) modulation and demodulation using MATLAB.</p>
+		<p>It includes the complete workflow of generating signals, modulating them, demodulating them using coherent detection, applying filtering, adding noise, and detecting DTMF frequencies using the Goertzel algorithm.</p>
+		<p>🛠 Tools & Technologies: Matlab </p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/DSB-SC%20Modulation%20%26%20Demodulation">View on GitHub</a>
+      </div>
+	  
+	  	  <!-- Deep Learning project -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Deep%20Learning%20project/Picture1.png" alt="Human Detection App" style="width:240px;height:180px;">
+        <h3>Deep Learning project</h3>
+        <p>🧠💻 Deep Learning for Pneumonia Detection from Chest X-Rays This project focuses on the design, training, and evaluation of deep learning models (CNNs) for detecting pneumonia from chest X-ray images.</p>
+		<p>Using a dataset of 5,863 images (healthy vs. pneumonia), we compared custom CNN architectures with Transfer Learning approaches to achieve robust medical image classification.</p>
+		<p>🛠 Tools & Technologies: Python | TensorFlow | </p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Deep%20Learning%20project">View on GitHub</a>
+      </div>
+	  
+	  
+	  
+	  	  <!-- Blackjack Game -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Digital%20Logic%20Design%20%E2%80%93%20Blackjack%20Game%20System/blackjackimg.png" alt="Human Detection App" style="width:240px;height:180px;">
+        <h3>Blackjack Game</h3>
+        <p>🎰Digital Logic Design – Blackjack Game System.</p>
+		<p>✳Overview Design and implementation of a complete Blackjack game system using Logisim.</p>
+		<p>The project simulates real gameplay with logic circuits, registers, counters, and memory integration, while managing betting, dealer logic, and win/lose conditions.</p>
+		<p>🛠 Tools & Technologies: Logisim </p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Digital%20Logic%20Design%20%E2%80%93%20Blackjack%20Game%20System">View on GitHub</a>
+      </div>
+	  
+	  
+	  
+	  	  <!-- Bluetooth-Controlled Smart Vehicle -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Bluetooth-Controlled%20Smart%20Vehicle/Picture1.png" alt="Human Detection App" style="width:240px;height:180px;">
+        <h3>Bluetooth-Controlled Smart Vehicle</h3>
+        <p>🚙 Bluetooth-Controlled Smart Vehicle I developed a microcontroller-based vehicle controlled via Bluetooth communication, enabling speed and direction control through a mobile device.</p>
+		<p>This project strengthened my skills in embedded system design, real-time control, communication protocol UART and debugging hardware/software integration.</p>
+		<p>🛠 Tools & Technologies: C | Simplicity Studio 5 | </p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Bluetooth-Controlled%20Smart%20Vehicle">View on GitHub</a>
+      </div>
+	  
+	  
+	  
+	  	  <!--FPGA Image Rotation & Display System -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/FPGA%20Image%20Rotation%20%26%20Display%20System/IRandDSigif-ezgif.com-video-to-gif-converter.gif" style="width:240px;height:180px;">
+        <h3>Image Rotation & Display System</h3>
+        <p>🖥💾🖼FPGA Image Rotation & Display System (Cyclone V + HDMI) In this project, we designed and implemented a hardware system on FPGA (Cyclone V) to display and rotate an image on an HDMI monitor.</p>
+		<p>The system supports both automatic and manual rotation at fixed angles (0°, 90°, 180°, 270°), with control via push buttons and switches.</p>
+		<p>🛠 Tools & Technologies: VHDL | Modelsim | Quartos | </p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/FPGA%20Image%20Rotation%20%26%20Display%20System">View on GitHub</a>
+      </div>
+	  
+	  
+	  
+	  	  <!-- Image Processing Blurring and Restoration -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Image%20Processing%20%E2%80%93%20Blurring%20and%20Restoration/Tim2LHfftgif.gif" alt="Human Detection App" style="width:240px;height:180px;">
+        <h3>Image Processing Blurring and Restoration</h3>
+        <p>🖼️ Image Processing – Blurring and Restoration This project explores image blurring and restoration techniques using both spatial and frequency domain approaches. </p>
+		<p> The main goal was to create test images, apply Gaussian blurring, and restore sharpness using high-frequency filters and FFT-based inverse filtering. </p>
+		<p>🛠 Tools & Technologies: C++</p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Image%20Processing%20%E2%80%93%20Blurring%20and%20Restoration">View on GitHub</a>
+      </div>
+	  
+	  
+	  
+	  	  <!-- Memory Management System oop c++ -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Memory%20Management%20System%20OOP/mmcimg.png" alt="Human Detection App" style="width:240px;height:180px;">
+        <h3>Memory Management System</h3>
+        <p>💻💾Memory Management System Simulation This project simulates a memory allocation system using different allocation strategies implemented in C++ with OOP principles.</p>
+		<p>🛠 Tools & Technologies: C++ | OOP |</p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Memory%20Management%20System%20OOP">View on GitHub</a>
+      </div>
+	  
+	  
+			<!-- system to detect overheating and malfunctioning sensors -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Temperature%20Sensor%20Monitoring%20%26%20Fault%20Detection/Image_temp.png" style="width:240px;height:180px;">
+        <h3>system to detect overheating and malfunctioning sensors</h3>
+        <p>🌡️ Temperature Sensor Monitoring & Fault Detection This project implements a multi-sensor temperature monitoring system that reads sensor data from files, calculates statistics using Exponential Moving Average (EMA), detects overheating events, and identifies malfunctioning sensors using parallel processing. </p>
+		<p>🛠 Tools & Technologies: Python | threading | multiprocessing |</p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Temperature%20Sensor%20Monitoring%20%26%20Fault%20Detection">View on GitHub</a>
+      </div>
+	  	  
+	  	  			<!-- Student Schedule Management System OOP -->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Student%20Schedule%20Management%20System%20OOP/Ssms_img.jpg" style="width:240px;height:180px;">
+        <h3>Student Schedule Management System</h3>
+        <p>📅 Student Schedule Management System Final project in Object-Oriented Programming (OOP) with C++.</p>
+		<p>This project implements a student schedule management application using three approaches:</p>
+		<p>1. Self Implementation – Full C++ implementation using STL and CSV files.</p>
+		<p>2. GenAI (Claude/ChatGPT) – AI-assisted implementation with debugging and adaptation.</p>
+		<p>3. Vibe Coding (Base44) – Low-code/no-code implementation based on defined requirements.</p>
+		<p>🛠 Tools & Technologies: C++ | OOP |</p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Student%20Schedule%20Management%20System%20OOP">View on GitHub</a>
+      </div>
+	  
+	  	  	  			<!-- Speaker with AUX Input-->
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/ylior28/my-projects/refs/heads/main/Speaker%20with%20AUX%20Input/auxspeakergif.gif" style="width:240px;height:180px;">
+        <h3>Speaker with AUX Input</h3>
+        <p>🔊AUX Speaker – LM386 Audio Amplifier This project is a simple DIY mono speaker that receives a standard 3.5mm AUX audio input.</p>
+		<p>The circuit mixes stereo (L/R) audio into mono, amplifies the signal using an LM386 audio amplifier, and drives an 8Ω speaker.</p>
+		<p>🛠 Tools & Technologies: KiCad</p>
+        <a href="https://github.com/ylior28/my-projects/tree/main/Speaker%20with%20AUX%20Input">View on GitHub</a>
+      </div>
+	  
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
     <h2>Contact Information</h2>
-    <p>Email: your@email.com</p>
-    <p>GitHub: <a href="https://github.com/ylior28/lioryevdayev.github.io">GitHub Profile</a></p>
+    <p>Email: yevlior28@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/ylior28/my-projects">GitHub Profile</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/lior-yevdayev/">LinkedIn</a></p>
   </section>
 
