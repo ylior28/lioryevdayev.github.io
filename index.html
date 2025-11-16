@@ -371,18 +371,41 @@
 
 
 
-<p>Views: <span id="views">loading...</span></p>
+	<p>Views: <span id="views">Loading...</span></p>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
 <script>
-fetch("https://api.countapi.dev/update/lior-site/views/?amount=1")
-  .then(res => res.json())
-  .then(data => {
-      document.getElementById("views").innerHTML = data.value;
-  })
-  .catch(err => {
-      document.getElementById("views").innerHTML = "Error";
+  // 👇 הדבק כאן את ה-CONFIG שלך מ-Firebase
+  var firebaseConfig = {
+    apiKey: "XXXX",
+    authDomain: "XXXX.firebaseapp.com",
+    databaseURL: "https://XXXX-default-rtdb.firebaseio.com",
+    projectId: "XXXX",
+    storageBucket: "XXXX.appspot.com",
+    messagingSenderId: "XXXX",
+    appId: "XXXX"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  const countRef = db.ref("views");
+
+  countRef.transaction((value) => {
+    return (value || 0) + 1;
+  });
+
+  countRef.on("value", (snap) => {
+    document.getElementById("views").innerText = snap.val();
   });
 </script>
+
+
+
+	
 
 
 
